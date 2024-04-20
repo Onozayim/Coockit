@@ -3,6 +3,7 @@
         <li><a href="{{ route('home') }}">INICIO</a></li>
         <li><a href="{{ route('recetas_index') }}">RECETAS</a></li>
         @auth
+            <li><a href="{{ route('getPlan') }}">PLAN</a></li>
             <li><a href="{{ route('logout') }}">CERRAR SESION</a></li>
         @endauth
         @guest
