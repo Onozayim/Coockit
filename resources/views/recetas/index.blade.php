@@ -3,6 +3,7 @@
 
 @auth
     <a href="{{ route('recetas_create') }}">CREAR RECETA</a>
+    <a href="{{ route('recetas_search') }}">BUSCAR RECETA</a>
 @endauth
 
 <h1>RECETAS</h1>

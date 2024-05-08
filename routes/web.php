@@ -50,6 +50,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('recetas')->group(function () {
         Route::get('', 'RecetasController@index')->name('recetas_index');
         Route::view('create', 'recetas.create')->name('recetas_create');
+        Route::get('search', 'RecetasController@search')->name('recetas_search');
     });
 
     Route::prefix('plan')->group(function() {

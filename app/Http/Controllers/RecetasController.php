@@ -37,6 +37,24 @@ class RecetasController extends Controller
         return view('recetas.index', compact('recetas'));
     }
 
+    public function search(Request $request) 
+    {
+        //return dd($request->search);
+        $search = $request->input('search');
+
+        if($search){
+            $recetas = Recetas::with('user.profile_picture', 'rating')
+                            ->where('title', 'like', "%$search%")
+                            ->paginate(5);
+        }
+        else{
+            $recetas = Recetas::with('user.profile_picture', 'rating')->paginate(5);
+        }
+        
+        return view('recetas.search', compact('recetas'));
+    }
+
+
     public function saveReceta(Request $request)
     {
         try {
