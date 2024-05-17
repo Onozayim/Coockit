@@ -9,12 +9,26 @@
     <title>coockIt</title>
 </head>
 <body>
-    <h1>REGISTER ADMIN</h1>
+    <h1>REGISTER</h1>
 
     <form action="{{route('store_admin')}}" method="post">
         @csrf
+        <input required name="username" type="text" placeholder="Ingrese su nombre de usuario">
+        <input required name="email" type="text" placeholder="Ingrese su correo">
+        <input required name="password" type="password" placeholder="Ingrese su contraseña">
+        <input required name="password_confirmation" type="password" placeholder="Confirme su contraseña">
 
-        <button type="submit">ENVIAR</button>
+        <button type="submit">Enviar</button>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </form>
 </body>
 </html>

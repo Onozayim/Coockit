@@ -44,12 +44,10 @@
         <div class="col-md-8" style="overflow-y: scroll">
             <h2>FAVORITOS</h2>
             <div class="row">
-                {{-- El id => 1, cambiarlo por al id del receta        --}}
-                <h3><a href="{{ route('recetas_detail', ['id'=> 1]) }}">Titulo de la receta favorita</a></h3>
-                <p>Aquí debería de haber una lista de recetas favoritas</p>
-
-                <h3><a href="{{ route('recetas_detail', ['id'=> 1]) }}">Titulo de la receta favorita 2</a></h3>
-                <p>Aquí debería de haber una lista de recetas favoritas</p>
+                @foreach ($favoritos as $item)
+                    <h3><a href="{{ route('recetas_detail', ['id'=> $item->receta->id]) }}">{{$item->receta->title}}</a></h3>
+                    <p>{{$item->receta->user->name}}</p>                   
+                @endforeach
             </div>
         </div>
     </div>
