@@ -72,6 +72,7 @@ class UserController extends Controller
         Auth::login($user);
 
         $request->session()->regenerate();
+        $request->session()->put('profile_picture', "");
         return redirect('/');
     }
     
@@ -129,6 +130,9 @@ class UserController extends Controller
     {
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
+            $profile_picture = User::with('profile_picture')->find(Auth::id())->profile_picture->path ?? "";
+            $request->session()->put('profile_picture', $profile_picture);
+
             return redirect('');
         }
 
@@ -173,6 +177,8 @@ class UserController extends Controller
             'size' => $image->getSize(),
             'user_id' => $user_id
         ]);
+
+        $request->session()->put('profile_picture', $path);
 
         return Redirect::back()->with('success', 'Imagen guardada!');
     }

@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::prefix('recetas')->group(function () {
     Route::get('detail/{id}', 'RecetasController@detail')->name('recetas_detail');
+    Route::get('', 'RecetasController@index')->name('recetas_index');
+    Route::get('search', 'RecetasController@search')->name('recetas_search');
 });
 
 //AQUI SE DEBE PONER LAS RUTAS QUE SOLO SE PUEDEN VER SI NO TIENE SESION
@@ -37,6 +39,10 @@ Route::middleware(['guest'])->group(function () {
     });
 });
 
+Route::prefix('ajax')->group(function () {
+    Route::get('loadComments', "ComentariosController@loadComments")->name('loadComments');
+});
+
 
 //AQUI SE DEBE PONER LAS RUTAS QUE SOLO SE PUEDEN VER SI NO TIENE SESION
 Route::middleware(['auth'])->group(function () {
@@ -48,9 +54,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('save_profile_picture', 'UserController@save_profile_picture')->name('save_profile_picture');
 
     Route::prefix('recetas')->group(function () {
-        Route::get('', 'RecetasController@index')->name('recetas_index');
         Route::view('create', 'recetas.create')->name('recetas_create');
-        Route::get('search', 'RecetasController@search')->name('recetas_search');
     });
 
     Route::prefix('plan')->group(function() {
@@ -64,7 +68,6 @@ Route::middleware(['auth'])->group(function () {
         Route::post('saveRecetaInMeal', "RecetasController@saveRecetaInMeal")->name('saveRecetaInMeal');
 
         Route::post('saveComentario', "ComentariosController@saveComentario")->name('saveComentario');
-        Route::get('loadComments', "ComentariosController@loadComments")->name('loadComments');
     });
 
     Route::prefix('user')->group(function () {
