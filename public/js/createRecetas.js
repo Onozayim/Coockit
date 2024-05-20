@@ -65,7 +65,8 @@ $(document).ready(function () {
         ingredients_array.forEach(function (ingredient) {
             formData.append('ingredients_array[]', JSON.stringify(ingredient));
         })
-        formData.append('images[]', new_images)
+        if(new_images.length > 0)
+            formData.append('images[]', new_images)
 
         //manda la peticion al servidor
 

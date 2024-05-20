@@ -64,7 +64,7 @@ class RecetasController extends Controller
                 'body' => 'required|max:100',
                 'calories' => 'required|numeric|min:0',
                 'ingredients_array' => 'array|required',
-                'images.*' => 'image|max:5120'
+                'images.*' => 'image|max:5120|nullable'
             ], [
                 'title.*' => 'La receta debe de llevar título',
                 'body.*' => 'La receta debe tener cuerpo',
@@ -74,8 +74,7 @@ class RecetasController extends Controller
                 'images.*.max' => 'La Imagen :position debe ser menor a 5mb',
             ]);
 
-            
-
+            // dd($request->all()); 
             //si tiene algun fallo, regresa el mensaje de error
             if ($validator->fails())
                 return $this->returnValidationErrors($validator->errors());
@@ -121,6 +120,7 @@ class RecetasController extends Controller
             if ($request->images) {
                 Log::debug("INSERT IMAGES");
                 foreach ($request->file('images') as $index => $image) {
+                    if($image == null) continue;
                     $extension = $image->getClientOriginalExtension();
                     $filename = time() . "{$index}.{$extension}";
                     $path = '/storage/' . $image->storeAs("/images/receta_{$receta->id}", $filename, 'public');
