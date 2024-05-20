@@ -4,7 +4,7 @@
 
 <div>
     @auth
-    @if (!$isFavorite)
+    @if (!$isFavorite && Auth::user()->id != $receta->user->id)
     <button id="saveOnFavorites">GUARDAR A FAVORITOS</button>
     @endif
 
