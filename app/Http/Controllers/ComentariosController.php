@@ -85,7 +85,7 @@ class ComentariosController extends Controller
             paginate, devuelve x (el numero que esta entre parentesis), registros de la base de datos
             para que esto funcione se debe traer una variable 'page', que en este caso, esta en el request
             */
-            $comentarios = Comentarios::with('user')->paginate(5);
+            $comentarios = Comentarios::with('user')->where('receta_id', $request->receta_id)->paginate(5);
             return $this->returnDataJson($comentarios, 'comentarios');
         } catch (Exception $ex) {
             return $this->returnErrorMessageWithException($ex);
