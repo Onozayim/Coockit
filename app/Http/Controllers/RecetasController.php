@@ -61,7 +61,7 @@ class RecetasController extends Controller
             //Valida los datos que se mando por el js
             $validator = Validator::make($request->only('title', 'body', 'calories', 'ingredients_array', 'images'), [
                 'title' => 'required|max:50',
-                'body' => 'required|max:100',
+                'body' => 'required|max:1000',
                 'calories' => 'required|numeric|min:0',
                 'ingredients_array' => 'array|required',
                 'images.*' => 'image|max:5120|nullable'
