@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #a0e7a0, #a0c8e7);
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: #4b4b4b;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+}
+
+form {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+form p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #4b4b4b;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="file"] {
+    margin: 10px 0;
+}
+
+#ingredientsContainer {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#ingredientsContainer input[type="text"],
+#ingredientsContainer input[type="number"] {
+    display: inline-block;
+    width: calc(33.33% - 10px);
+    margin-right: 10px;
+}
+
+#ingredientsContainer input[type="text"]:last-child,
+#ingredientsContainer input[type="number"]:last-child {
+    margin-right: 0;
+}
+
+button {
+    background: #4b4b4b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #333;
+}
+
+#addIngredient {
+    display: block;
+    margin: 10px 0;
+}
+
+#saveReceta {
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    margin-top: 20px;
+}
+
+#saveReceta:hover {
+    background: #4b4b4b;
+}

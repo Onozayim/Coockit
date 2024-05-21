@@ -1,0 +1,132 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #a0e7a0, #a0c8e7);
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #4b4b4b;
+}
+
+p {
+    color: #4b4b4b;
+}
+
+button {
+    background: #4b4b4b;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: #333;
+}
+
+#saveOnFavorites {
+    display: block;
+    margin: 10px auto;
+}
+
+#verifyReceta, #dennyReceta {
+    margin: 10px;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+}
+
+#comentariosContainer {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header, .modal-footer {
+    background: #4b4b4b;
+    color: #fff;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-title {
+    color: #fff;
+}
+
+select, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.ingredients, .instructions {
+    width: 45%;
+}
+
+.ingredients p, .instructions p {
+    margin: 5px 0;
+}
+
+.ingredients {
+    text-align: left;
+}
+
+.instructions {
+    text-align: left;
+}
+
+.ingredient-photo {
+    text-align: center;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+}

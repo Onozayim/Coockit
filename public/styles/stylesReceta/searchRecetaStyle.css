@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #a0e7a0, #a0c8e7);
+    height: 100vh;
+}
+
+form input[type="text"]{
+    width: 25%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.botonBuscar{
+    background: #4b4b4b;
+    color: #fff;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.botonBuscar:hover {
+    background: #333;
+}
+
+.recetas-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Ajusta el espacio entre los elementos según sea necesario */
+    padding: 20px; /* Añade un poco de relleno alrededor del contenedor */
+}
+
+.receta-item {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.receta-item h2 a {
+    text-decoration: none;
+    color: #28a745;
+}
+
