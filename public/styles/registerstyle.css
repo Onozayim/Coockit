@@ -71,5 +71,19 @@ a:hover {
 .div1 { grid-area: 1 / 1 / 2 / 2; 
     align-items: end;
 }
+
+.full_div {
+    height: 100%;
+    display: flex;
+}
+
+.full_div > h1 {
+    height: fit-content;
+    display: inline-block;
+    width: 100%;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
 .div2 { grid-area: 2 / 1 / 3 / 2; }
 .div3 { grid-area: 3 / 1 / 4 / 2; }
