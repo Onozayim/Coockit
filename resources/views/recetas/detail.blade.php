@@ -26,7 +26,7 @@
         @endauth
     </div>
 
-    <h1>{{$receta->title}}</h1>
+    <h1 class="specialH1">{{$receta->title}}</h1>
     <p>Creado por: {{$receta->user->name}}</p>
     <p>Estado de la receta: {{$receta->status}}</p>
 
@@ -41,7 +41,7 @@
             </ul>
             <div class="ingredient-photo">
             @foreach ($receta->images as $image)
-                <img src="{{ asset($image->path) }}" width="200" height="200" alt="">
+                <img class="specialIMG" src="{{ asset($image->path) }}" width="200" height="200" alt="">
                 <br>
                 @endforeach
             </div>
