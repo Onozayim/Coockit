@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    align-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #a0e7a0, #a0c8e7);
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.50fr 2fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+.div1 { grid-area: 1 / 1 / 2 / 4; }
+.div2 { grid-area: 2 / 2 / 3 / 3; 
+    align-content: center;
+    justify-content: center;
+    color: #464d35;
+    text-shadow: 2px 2px 5px #464d35;
+}

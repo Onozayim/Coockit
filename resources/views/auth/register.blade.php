@@ -38,8 +38,7 @@
         </div>
         <div class="div3"> 
             <a href="{{ route('login') }}">Ya tienes cuenta? Inicia sesión</a>
-            <br>
-            <a href="{{ route(' ') }}">Menú</a>
+            
         </div>
     </div>
 </body>

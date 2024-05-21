@@ -1,7 +1,32 @@
 @extends('layout')
 @section('content')
-    <h1>HOLA A TODOS, ESTA ES LA PÁGINA PRINCIPAL QUE ESTA PENDIETE</h1>
-    @auth
-        <h1>{{Auth::user()->name}}</h1>
-    @endauth
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('styles/welcomestyle.css') }}">
+    
+    <title>coockIt</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="div1"> 
+
+        </div>
+        <div class="div2"> 
+            <h1 style="text-align:center;">BIENVENIDO</h1>
+            <h1 style="text-align:center;">A</h1>
+                <img src="{{ asset('/storage/images/CookIt.png') }}" alt="" >
+            
+            
+            @auth
+                <h1 style="text-align:center;">{{Auth::user()->name}}</h1>
+            @endauth
+        </div>
+    </div>
+
+    
+</body>
+    
 @endsection
