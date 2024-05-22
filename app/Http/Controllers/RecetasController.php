@@ -17,6 +17,7 @@ use Exception;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\Utils;
+use Illuminate\Support\Facades\Redirect;
 
 class RecetasController extends Controller
 {
@@ -279,5 +280,23 @@ class RecetasController extends Controller
         } catch (Exception $ex) {
             return $this->returnErrorMessageWithException($ex);
         }
+
+    }
+    public function RemoveFromFavorite(Request $request) {
+        if(!$request->id) {
+            return $this->returnErrorView("Petición no valida");
+        }
+
+        $favorito = Favoritos::find($request->id);
+
+        if(!$favorito)
+            return $this->returnErrorView("Receta no encontrada");
+
+        if($favorito->user_id != Auth::id())
+            return $this->returnErrorView("No puedes eliminar esta receta");
+
+
+        $favorito->delete();
+        return Redirect::back()->with('success', 'Receta eliminada de favoritos');
     }
 }

@@ -59,6 +59,7 @@
                 @foreach ($favoritos as $item)
                     <h3><a href="{{ route('recetas_detail', ['id'=> $item->receta->id]) }}">{{$item->receta->title}}</a></h3>
                     <p>{{$item->receta->user->name}}</p>                   
+                    <a href="{{ route('remove_favorite', ['id'=>$item->id]) }}" style="color: red">Eliminar de favoritos</a>
                 @endforeach
             </div>
         </div>

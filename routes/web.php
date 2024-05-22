@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('recetas')->group(function () {
         Route::view('create', 'recetas.create')->name('recetas_create');
+        Route::get('removeFromFavorite', 'RecetasController@RemoveFromFavorite')->name('remove_favorite');
     });
 
     Route::prefix('plan')->group(function() {
